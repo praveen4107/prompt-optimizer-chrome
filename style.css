@@ -1,0 +1,105 @@
+/* Layout */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  padding: 18px;
+  width: 270px;
+  margin: 0;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Hide pages */
+.page.hidden {
+  display: none;
+}
+
+/* Headings */
+h2 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+}
+
+/* Labels */
+label {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 14px;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.15);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+/* Primary buttons */
+button#save-key,
+button#optimize-btn,
+button#save-new-key {
+  background: #0077ff;
+  color: white;
+}
+
+button#save-key:hover,
+button#optimize-btn:hover,
+button#save-new-key:hover {
+  background: #0065d4;
+}
+
+/* Secondary buttons */
+button#change-key-btn,
+button#cancel-change {
+  background: #e9e9e9;
+  color: #222;
+}
+
+button#change-key-btn:hover,
+button#cancel-change:hover {
+  background: #d8d8d8;
+}
+
+/* Button press animation */
+button:active {
+  transform: scale(0.97);
+}
+
+/* Container spacing */
+.page {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Simple fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

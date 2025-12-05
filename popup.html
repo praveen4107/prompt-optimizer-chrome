@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="first-time" class="page">
+  <h2>Prompt Optimizer</h2>
+  <label>API Key</label>
+  <input type="password" id="api-key">
+  <button id="save-key">Save</button>
+</div>
+
+<div id="main-ui" class="page hidden">
+  <h2>Prompt Optimizer</h2>
+  <button id="optimize-btn">Optimize Prompt</button>
+  <button id="change-key-btn">Change API Key</button>
+</div>
+
+<div id="change-key-ui" class="page hidden">
+  <h2>Prompt Optimizer</h2>
+  <label>New API Key</label>
+  <input type="password" id="new-api-key">
+  <button id="cancel-change">Cancel</button>
+  <button id="save-new-key">Save</button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
