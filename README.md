@@ -1,22 +1,25 @@
-# 📦 Prompt Optimizer (Chrome Extension)
+# Prompt Optimizer (Chrome Extension)
 
-Prompt Optimizer is a Chrome extension that automatically improves your prompts on ChatGPT, Gemini, and Claude. It detects the prompt on the page, refines it using prompt-engineering best practices, and replaces it with a clearer, more effective version — instantly.
+Prompt Optimizer is a Chrome extension that improves prompts written on ChatGPT, Gemini, and Claude. It detects the active prompt input, rewrites it using simple prompt-engineering rules or Gemini, and replaces it directly in the same field.
 
-### 🚀 Features
+## Features
 
-- One-click prompt optimization
-- Works on ChatGPT, Claude, and Gemini
-- Uses Google Gemini (Free tier) where available, with a local fallback optimizer
-- Auto-detects prompt fields (`textarea`, `div[role="textbox"]`, `contenteditable`)
-- Replaces the original prompt with an optimized version in-place
-- Simple, modern UI
-- Secure API key storage using Chrome `storage.sync`
+-   One-click prompt optimization
 
-### 📁 Folder Structure
+-   Supports ChatGPT, Claude, and Gemini
+
+-   Local rule-based optimizer (works without API key)
+
+-   Optional Gemini API integration
+
+-   Automatically detects prompt input fields
+
+-   Rewrites prompts in place
+
+## Project Structure
 
 ```
 prompt-optimizer/
-│
 ├── manifest.json
 ├── popup.html
 ├── popup.js
@@ -24,54 +27,41 @@ prompt-optimizer/
 ├── content.js
 ├── background.js
 └── libs/
-	└── google-genai.js
+    └── google-genai.js
 ```
 
-### 🔧 Installation (Developer Mode)
+## Installation
 
-1. Clone or download this repository:
+1.  Clone the repository
 
-```bash
-git clone https://github.com/praveen4107/prompt-optimizer-chrome.git
-```
+    `
+    git clone https://github.com/praveen4107/prompt-optimizer-chrome.git
+    `
 
-2. Open `chrome://extensions` in Chrome or a Chromium-based browser
-3. Enable **Developer mode** (toggle in the top-right)
-4. Click **Load unpacked** and select the `prompt-optimizer` folder
-5. The extension will appear in your toolbar
+3.  Open chrome://extensions
 
-### 🛠 Initial Setup (API Key)
+4.  Enable Developer Mode
 
-1. Go to Google AI Studio: https://aistudio.google.com
-2. Generate a free API key (Gemini free tier) if you want remote rewriting
-3. Open the extension popup
-4. Paste the API key and click **Save API Key**
+5.  Click Load unpacked and select the project folder
 
-> The extension also includes a local (free) rule-based optimizer that will work without an API key. Use the remote Gemini API if you want LLM-quality rewrites and you have a supported model.
+## API Setup
 
-### ✨ How to Use
+-   Generate a Gemini API key from Google AI Studio
 
-1. Open ChatGPT, Claude, or Gemini in a tab
-2. Type your prompt in the chat input as you normally would
-3. Click the extension icon, then click **Optimize Prompt (active tab)**
-4. The prompt will be rewritten in-place using the chosen optimizer
+-   Paste the key in the extension popup
 
-### 🤖 Technology Used
+## Usage
 
-- Manifest V3 (Chrome Extensions)
-- Gemini Free API
-- Custom lightweight client (google-genai.js)
-- Vanilla JS (no frameworks)
-- Secure chrome.storage.local for API key handling
+1.  Open ChatGPT, Claude, or Gemini
 
-### 🧩 How It Works
+2.  Type a prompt
 
-1. Detect Prompt: `content.js` scans the active site for common prompt fields (`textarea`, `div[role="textbox"]`, `div[contenteditable="true"]`, `input`), including inside shadow DOMs for better coverage.
-2. Optimize: By default the extension uses a local rule-based optimizer. If configured with an API key and a supported model, it can call Gemini to perform LLM-based rewrites.
-3. Replace Prompt: The optimized text is injected back into the same field and input events are dispatched so the host app recognizes the change.
+3.  Click the extension icon and optimize
 
-### 🔐 Privacy & Security
+## Privacy
 
-- Your API key is stored locally in Chrome only (using `chrome.storage.sync`).
-- Prompt text is only sent to Google Gemini if you explicitly provide an API key and the extension calls the remote API.
-- The extension does not collect or transmit usage data elsewhere.
+-   API key is stored locally in Chrome
+
+-   Prompts are sent to Gemini only if an API key is provided
+
+-   No data collection
